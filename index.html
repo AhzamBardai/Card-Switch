@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href="style.css">
+</head>
+<body>
+    <div class="first-page">
+        <div class="modal" id="start-modal">
+            <h1 class="welcome">Welcome to Card Swich!</h1>
+            <p class="difficulty">Choose your difficulty</p>
+            <button class="button easy">Easy</button>
+            <button class="button medium">Medium</button>
+            <button class="button hard">Hard</button>
+        </div>
+    </div>
+
+    <div class="settings">
+        <div class="modal" id="settings-modal">
+            <!-- add how to play the game -->
+            <button class="button change-background">Change Background</button>
+        </div>
+    </div>
+    
+    <div class="score-board">
+        <div class="score=list">
+            <span class="correct-matches">0</span>
+            <span class="correct">Correct</span>
+        </div>
+        <div class="score-list">
+            <span class="incorrect-matches">0</span>
+            <span class="incorrect">Incorrect</span>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="cards"></div>
+    </div>
+
+    <div id="win-screen">
+        <div class="modal" id="win-modal">
+            <p class="winner">Congratulations!</p>
+            <button id="button restart">Restart Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
