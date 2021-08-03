@@ -1,0 +1,21 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 50px );
+    grid-gap: 1rem;
+    margin: 5rem;
+    padding: 2rem;
+	max-width: 1000px;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    background: lightblue;
+    padding: 2rem;
+    font-size:xx-large;
+    transition: transform 0.25s;
+	transform-style: preserve-3d;
+}
+
+.card.flip{
+	transform: rotateY(180deg);
+}

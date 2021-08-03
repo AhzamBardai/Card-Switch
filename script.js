@@ -4,16 +4,16 @@ const cards = [['😄', '😉', '🐭', '🖱️', '🧠', '🙃', '😠','🤑'
                
 ]
 
-const easyBtn = document.querySelector('.easy'),
-      medBtn = document.querySelector('.medium'),
-      hardBtn = document.querySelector('.hard'),
-      restartBtn = document.querySelector('.restart')
+const easyBtn = document.querySelector('.easy')
+const medBtn = document.querySelector('.medium')
+const hardBtn = document.querySelector('.hard')
+const restartBtn = document.querySelector('.restart')
 
-const right = document.querySelector('.correct-matches'),
-      wrong = document.querySelector('.incorrect-matches'),
-      allCards = document.querySelector('.cards'),
-      start = document.querySelector('.first-page'),
-      winner = document.querySelector('.win-screen')
+const right = document.querySelector('.correct-matches')
+const wrong = document.querySelector('.incorrect-matches')
+const allCards = document.querySelector('.cards')
+const start = document.querySelector('.first-page')
+const winner = document.querySelector('.win-screen')
 
 let first,
     second,
@@ -27,16 +27,19 @@ let first,
 
 easyBtn.addEventListener('click', function(e){
     e.preventDefault()
+    allCards.style.gridTemplateColumns = 'repeat(4, 50px )';
     makeCardGrid(6)
     
 })
 medBtn.addEventListener('click', function(e){
     e.preventDefault()
-    makeCardGrid(9)
+    allCards.style.gridTemplateColumns = 'repeat(4, 50px )';
+    makeCardGrid(8)
     
 })
 hardBtn.addEventListener('click', function(e){
     e.preventDefault()
+    allCards.style.gridTemplateColumns = 'repeat(6, 50px )';
     makeCardGrid(12)
     
 })
@@ -46,6 +49,7 @@ function makeCardGrid(num) {
     randIndex = Math.floor(Math.random() * (cards[randArr].length - num))
     stopIndex = randIndex + num
     newCards = []
+    
     for(i=randIndex ; i<stopIndex ; i++){
 
             newCard = document.createElement('div')
@@ -66,10 +70,60 @@ function makeCardGrid(num) {
     }
     
 
+    for(i=0 ; i<newCards.length ; i++){
+        rand = Math.floor(Math.random() * i)
+        temp = newCards[i]
+        newCards[i] = newCards[rand]
+        newCards[rand] = temp
+    }
+
     newCards.forEach(card => {
         allCards.appendChild(card)
+        card.addEventListener('click', flip)
     })
+    
 }
 
- 
 
+function flip() {
+    if(first === this) return;
+    else if(lockFlip) return;
+    else if (!match){
+        first = this
+        match = true
+        this.classList.toggle('flip')
+    }
+    else {
+        second = this
+        lockFlip = true
+        this.classList.toggle('flip')
+        cardMatch()
+    }
+
+}
+
+function cardMatch() {
+    if(first.dataset.cardnum === second.dataset.cardnum) {
+        rightCount++
+        right.innerText = rightCount
+        first.removeEventListener('click', flip)
+        second.removeEventListener('click', flip)
+        lockFlip = false
+        match = false
+        first = null
+        second = null
+        if(rightCount == newCards.length){
+            // finish game function
+        }
+    }
+    else {
+        wrongCount++
+        wrong.innerText = wrongCount
+        first.classList.toggle('click', flip)
+        second.classList.toggle('click', flip)
+        lockFlip = false
+        match = false
+        first = null
+        second = null
+    }
+}
