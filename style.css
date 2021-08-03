@@ -1,6 +1,9 @@
+body{
+    text-align: center;
+}
 .cards {
     display: grid;
-    grid-template-columns: repeat(4, 50px );
+    grid-template-columns: repeat(4, 50px);
     grid-column-gap: 6rem;
     grid-row-gap: 1rem;
     justify-content: center;
@@ -9,14 +12,15 @@
 .card{
     display: flex;
     justify-content: center;
-    background: lightblue;
-    padding: 3rem 4rem;
-    font-size: 3rem;
+    background: no-repeat center/100% url('card-img.jpg');
+    cursor: pointer;
+    padding: 2rem 4rem;
+    font-size: 4rem;
     transition: transform 0.5s;
 	transform-style: preserve-3d;
     border-radius: 1rem;
     border: 2px solid black;
-    box-shadow: inset 0px 0px 0px 10px white;
+    box-shadow: inset 0px 0px 0px 5px white;
 }
 
 .card.flip{
@@ -27,8 +31,37 @@
 .card-front, .card-back {
     backface-visibility: hidden;
 }
-
 .card-back {
     transform: rotateY(.5turn) translateZ(50px);
+    position: relative;
+    display: flex;
+    justify-content:center;
+    
 }
 
+.card-back-words {
+    width: 50;
+    padding: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: rgba(76, 92, 105, .9);
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.card-front {
+    position: absolute;
+    top: .5rem;
+    bottom: .4rem;
+    right: .5rem;
+    border-radius: .5rem;
+    padding: 4rem 5rem 4.2rem 1.2rem;
+    transform: translateZ(50px);
+    background: no-repeat center/100% url('https://www.pngmart.com/files/8/Question-Mark-PNG-Transparent-Image.png');
+}
+
+
+.back-image {
+    color: white;
+    transform: translateZ(75px);
+}

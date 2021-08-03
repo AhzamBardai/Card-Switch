@@ -27,19 +27,24 @@ let first,
 
 easyBtn.addEventListener('click', function(e){
     e.preventDefault()
-    allCards.style.gridTemplateColumns = 'repeat(4, 50px )';
+    allCards.style.gridTemplateColumns = 'repeat(4, 50px )'
+    allCards.style.gridRowGap = '4rem'
+    allCards.style.gridColumnGap = '11rem'
     makeCardGrid(6)
     
 })
 medBtn.addEventListener('click', function(e){
     e.preventDefault()
-    allCards.style.gridTemplateColumns = 'repeat(6, 50px )';
+    allCards.style.gridTemplateColumns = 'repeat(6, 50px )'
+    allCards.style.gridRowGap = '3rem'
+    allCards.style.gridColumnGap = '7rem'
     makeCardGrid(9)
     
 })
 hardBtn.addEventListener('click', function(e){
     e.preventDefault()
-    allCards.style.gridTemplateColumns = 'repeat(6, 50px )';
+    allCards.style.gridTemplateColumns = 'repeat(6, 50px )'
+    allCards.style.gridColumnGap = '7rem'
     makeCardGrid(12)
     
 })
@@ -55,13 +60,19 @@ function makeCardGrid(num) {
             newCard = document.createElement('div')
             front = document.createElement('div')
             back = document.createElement('div')
+            backImage = document.createElement('div')
 
             newCard.classList.add('card')
             newCard.setAttribute('data-cardnum', i)
             front.classList.add('card-front')
             back.classList.add('card-back')
-            back.textContent = cards[randArr][i]
+            backImage.classList.add('back-image')
+            backImage.textContent = cards[randArr][i]
 
+            if(randArr !== 0){
+                back.classList.add('card-back-words')
+            }
+            back.appendChild(backImage)
             newCard.appendChild(front)
             newCard.appendChild(back)
 
@@ -136,9 +147,7 @@ function cardMatch() {
             first = null
             
         }, 1000)
-        
-            
-        
-        
     }
 }
+
+
