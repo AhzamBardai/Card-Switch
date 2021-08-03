@@ -16,6 +16,7 @@
 	transform-style: preserve-3d;
     border-radius: 1rem;
     border: 2px solid black;
+    box-shadow: inset 0px 0px 0px 10px white;
 }
 
 .card.flip{
@@ -28,6 +29,6 @@
 }
 
 .card-back {
-    transform: rotateY(.5turn);
+    transform: rotateY(.5turn) translateZ(50px);
 }
 

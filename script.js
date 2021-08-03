@@ -90,15 +90,17 @@ function flip() {
     else if(lockFlip) return;
     else if (!match){
         first = this
+        console.log(this)
         match = true
         this.classList.toggle('flip')
     }
     else {
         second = this
-        lockFlip = true
         setTimeout(() => {
             this.classList.toggle('flip')
         }, 100)
+        console.log(this)
+        lockFlip = true
         cardMatch()
     }
 
@@ -121,15 +123,22 @@ function cardMatch() {
     else {
         wrongCount++
         wrong.innerText = wrongCount
+        console.log(first)
+        console.log(second)
         setTimeout(() => {
             first.classList.toggle('flip')
-            second.classList.toggle('flip')
+            setTimeout(() => {
+                second.classList.toggle('flip')
+                second = null
+            }, 30)
+            lockFlip = false
+            match = false
+            first = null
             
-        }, 100)
-        lockFlip = false
-        match = false
-        first = null
-        second = null
+        }, 1000)
+        
+            
+        
         
     }
 }
