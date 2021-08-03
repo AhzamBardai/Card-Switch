@@ -1,21 +1,33 @@
 .cards {
     display: grid;
     grid-template-columns: repeat(4, 50px );
-    grid-gap: 1rem;
-    margin: 5rem;
-    padding: 2rem;
-	max-width: 1000px;
+    grid-column-gap: 6rem;
+    grid-row-gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
 }
 .card{
     display: flex;
     justify-content: center;
     background: lightblue;
-    padding: 2rem;
-    font-size:xx-large;
-    transition: transform 0.25s;
+    padding: 3rem 4rem;
+    font-size: 3rem;
+    transition: transform 0.5s;
 	transform-style: preserve-3d;
+    border-radius: 1rem;
+    border: 2px solid black;
 }
 
 .card.flip{
-	transform: rotateY(180deg);
+	transform: rotateY(.5turn);
 }
+
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(.5turn);
+}
+

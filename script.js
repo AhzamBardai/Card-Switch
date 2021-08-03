@@ -33,8 +33,8 @@ easyBtn.addEventListener('click', function(e){
 })
 medBtn.addEventListener('click', function(e){
     e.preventDefault()
-    allCards.style.gridTemplateColumns = 'repeat(4, 50px )';
-    makeCardGrid(8)
+    allCards.style.gridTemplateColumns = 'repeat(6, 50px )';
+    makeCardGrid(9)
     
 })
 hardBtn.addEventListener('click', function(e){
@@ -96,7 +96,9 @@ function flip() {
     else {
         second = this
         lockFlip = true
-        this.classList.toggle('flip')
+        setTimeout(() => {
+            this.classList.toggle('flip')
+        }, 100)
         cardMatch()
     }
 
@@ -119,11 +121,15 @@ function cardMatch() {
     else {
         wrongCount++
         wrong.innerText = wrongCount
-        first.classList.toggle('click', flip)
-        second.classList.toggle('click', flip)
+        setTimeout(() => {
+            first.classList.toggle('flip')
+            second.classList.toggle('flip')
+            
+        }, 100)
         lockFlip = false
         match = false
         first = null
         second = null
+        
     }
 }
