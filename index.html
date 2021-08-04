@@ -10,8 +10,8 @@
 <body>
     <div class="first-page">
         <div class="modal" id="start-modal">
-            <h1 class="welcome">Welcome to Card Swich!</h1>
-            <p class="difficulty">Choose your difficulty</p>
+            <h1 class="welcome">Welcome to Card Switch!</h1>
+            <h3 class="difficulty"></h3>
             <button class="button easy">Easy</button>
             <button class="button medium">Medium</button>
             <button class="button hard">Hard</button>
@@ -26,13 +26,13 @@
     </div>
     
     <div class="score-board">
-        <div class="score=list">
-            <span class="correct-matches">0</span>
-            <span class="correct">Correct</span>
+        <div class="score-list">
+            <div class="correct-matches points"><span class="right">0</span></div>
+            <div class="correct">Correct</div>
         </div>
         <div class="score-list">
-            <span class="incorrect-matches">0</span>
-            <span class="incorrect">Incorrect</span>
+            <div class="incorrect-matches points"><span class="wrong">0</span></div>
+            <div class="incorrect">Incorrect</div>
         </div>
     </div>
 
@@ -40,10 +40,10 @@
         <div class="cards"></div>
     </div>
 
-    <div id="win-screen">
+    <div class="win-screen">
         <div class="modal" id="win-modal">
-            <p class="winner" >Congratulations!</p>
-            <button id="button restart">Restart Game</button>
+            <h1 class="winner" >Congratulations!</h1>
+            <button class="button restart">Restart Game</button>
         </div>
     </div>
 

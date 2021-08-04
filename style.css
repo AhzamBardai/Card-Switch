@@ -19,8 +19,8 @@ body{
     transition: transform 0.5s;
 	transform-style: preserve-3d;
     border-radius: 1rem;
-    border: 2px solid black;
-    box-shadow: inset 0px 0px 0px 5px white;
+    box-shadow: 5px 5px 10px 5px rgb(83, 83, 83);
+    border: 5px solid white;
 }
 
 .card.flip{
@@ -57,11 +57,121 @@ body{
     border-radius: .5rem;
     padding: 4rem 5rem 4.2rem 1.2rem;
     transform: translateZ(50px);
-    background: no-repeat center/100% url('https://www.pngmart.com/files/8/Question-Mark-PNG-Transparent-Image.png');
+    background: no-repeat center/100% url('question-img.png');
 }
 
 
 .back-image {
     color: white;
     transform: translateZ(75px);
+}
+
+.score-board {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    font-size: 30px;
+    display: none;
+    grid-template-rows: repeat(4, 120px);
+    place-items: right;
+}
+
+.points {
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    background-image: linear-gradient(to right, #8d8f8d 0%, #535352 100%);
+    color: whitesmoke;
+    
+}
+.correct-matches{
+    box-shadow: 5px 5px 10px grey;
+    border: 5px solid rgb(103, 245, 122);
+}
+
+.incorrect-matches{
+    box-shadow: 5px 5px 10px grey;
+    border: 5px solid rgb(250, 65, 65);
+    margin-top: 2rem;
+}
+
+.correct , .incorrect {
+    margin-top: 1rem;
+}
+
+span{
+    line-height: 4rem;
+}
+
+
+h1 {
+    margin-top: 200px;
+    font-size: 100px;
+    text-decoration: underline;
+}
+
+@keyframes mymove {
+    from {font-size: 0px;}
+    to {font-size: 50px;}
+}
+
+.difficulty {
+    animation: mymove 1.5s;
+    animation-delay: 1s;
+    font-size: 50px;
+}
+
+.modal {
+	background-color: rgb(247, 245, 245);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+	display: none;
+    opacity: 1;
+}
+
+.welocome {
+    margin: 200px;
+}
+
+.button {
+    display: inline-block;
+    position: absolute;
+    width: 10rem;
+    height: 7rem;
+    font-size: 25px;
+    margin-left: 5rem;
+    bottom: 10rem;
+    border-radius: 2rem;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.button:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 5px;
+}
+
+.easy {
+    right: 63rem;
+    background-image: linear-gradient(to right, #87f76b 0%, #b4f767 51%, #dbf566 100%);
+}
+
+.medium {
+    right: 43rem;
+    background-image: linear-gradient(to right, #f5f76b 0%, #f7c967 51%, #f5a666 100%);
+}
+
+.hard {
+    right: 23rem;
+    background-image: linear-gradient(to right, #f7af6b 0%, #ff5f38 51%, #ff2222 100%);
+}
+
+.restart {
+    right: 43rem;
+    bottom: 15rem;
+    background-image: linear-gradient(to top, #6bb3f7 0%, #67d5f7 51%, #66ecf5 100%);
 }

@@ -8,9 +8,12 @@ const easyBtn = document.querySelector('.easy')
 const medBtn = document.querySelector('.medium')
 const hardBtn = document.querySelector('.hard')
 const restartBtn = document.querySelector('.restart')
+const startModal = document.querySelector('#start-modal')
+const endModal = document.querySelector('#win-modal')
+const board = document.querySelector('.score-board')
 
-const right = document.querySelector('.correct-matches')
-const wrong = document.querySelector('.incorrect-matches')
+const right = document.querySelector('.right')
+const wrong = document.querySelector('.wrong')
 const allCards = document.querySelector('.cards')
 const start = document.querySelector('.first-page')
 const winner = document.querySelector('.win-screen')
@@ -30,6 +33,11 @@ easyBtn.addEventListener('click', function(e){
     allCards.style.gridTemplateColumns = 'repeat(4, 50px )'
     allCards.style.gridRowGap = '4rem'
     allCards.style.gridColumnGap = '11rem'
+    startModal.style.display = 'none'
+    board.style.display = 'grid'
+    document.body.style.background = 'no-repeat center/80% url("background-img.png")'
+    document.body.style.backgroundPositionX = '12rem'
+    document.body.style.backgroundPositionY = '-5rem'
     makeCardGrid(6)
     
 })
@@ -38,6 +46,11 @@ medBtn.addEventListener('click', function(e){
     allCards.style.gridTemplateColumns = 'repeat(6, 50px )'
     allCards.style.gridRowGap = '3rem'
     allCards.style.gridColumnGap = '7rem'
+    startModal.style.display = 'none'
+    board.style.display = 'grid'
+    document.body.style.background = 'no-repeat center/80% url("background-img.png")'
+    document.body.style.backgroundPositionX = '12rem'
+    document.body.style.backgroundPositionY = '-5rem'
     makeCardGrid(9)
     
 })
@@ -45,6 +58,11 @@ hardBtn.addEventListener('click', function(e){
     e.preventDefault()
     allCards.style.gridTemplateColumns = 'repeat(6, 50px )'
     allCards.style.gridColumnGap = '7rem'
+    startModal.style.display = 'none'
+    board.style.display = 'grid'
+    document.body.style.background = 'no-repeat center/80% url("background-img.png")'
+    document.body.style.backgroundPositionX = '12rem'
+    document.body.style.backgroundPositionY = '-5rem'
     makeCardGrid(12)
     
 })
@@ -54,7 +72,9 @@ function makeCardGrid(num) {
     randIndex = Math.floor(Math.random() * (cards[randArr].length - num))
     stopIndex = randIndex + num
     newCards = []
-    
+    if(num === 12){
+        randArr = 0
+    }
     for(i=randIndex ; i<stopIndex ; i++){
 
             newCard = document.createElement('div')
@@ -101,7 +121,6 @@ function flip() {
     else if(lockFlip) return;
     else if (!match){
         first = this
-        console.log(this)
         match = true
         this.classList.toggle('flip')
     }
@@ -110,7 +129,6 @@ function flip() {
         setTimeout(() => {
             this.classList.toggle('flip')
         }, 100)
-        console.log(this)
         lockFlip = true
         cardMatch()
     }
@@ -123,31 +141,52 @@ function cardMatch() {
         right.innerText = rightCount
         first.removeEventListener('click', flip)
         second.removeEventListener('click', flip)
+        first.style.border = '5px solid lightgreen'
+        second.style.border = '5px solid lightgreen'
         lockFlip = false
         match = false
         first = null
         second = null
-        if(rightCount == newCards.length){
-            // finish game function
+        if(rightCount == newCards.length/2){
+            finishGame()
         }
     }
     else {
         wrongCount++
         wrong.innerText = wrongCount
-        console.log(first)
-        console.log(second)
-        setTimeout(() => {
+        first.style.border = '5px solid red'
+        second.style.border = '5px solid red'
+
+        setTimeout(() => {            
             first.classList.toggle('flip')
+            first.style.border = '5px solid white'
             setTimeout(() => {
                 second.classList.toggle('flip')
+                second.style.border = '5px solid white'    
                 second = null
             }, 30)
             lockFlip = false
             match = false
             first = null
-            
         }, 1000)
+
     }
 }
 
 
+window.onload = function () {
+    startModal.style.display = 'block'
+    setTimeout(() => {
+        document.querySelector('.difficulty').innerHTML = 'Choose your <em>Difficulty</em>'
+    }, 1000)
+}
+
+function finishGame() {
+    setTimeout(() => {
+        endModal.style.display = 'block'
+    }, 2000);
+    restartBtn.addEventListener('click', function() {
+        endModal.style.display = 'none'
+        startModal.style.display = 'block'
+    })
+}
