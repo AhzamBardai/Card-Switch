@@ -85,22 +85,28 @@ body{
     color: whitesmoke;
     
 }
-.correct-matches{
+.score{
     box-shadow: 5px 5px 10px grey;
-    border: 5px solid rgb(103, 245, 122);
+    border: 5px solid rgb(102, 250, 243);
 }
 
+.correct-matches{
+    box-shadow: 5px 5px 10px grey;
+    border: 5px solid rgb(103, 245, 122);    
+    margin-top: 2rem;
+}
 .incorrect-matches{
     box-shadow: 5px 5px 10px grey;
     border: 5px solid rgb(250, 65, 65);
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
-.correct , .incorrect {
+.correct , .incorrect, .total-score {
     margin-top: 1rem;
+    position: absolute;
 }
 
-span{
+span, .score{
     line-height: 4rem;
 }
 
@@ -174,4 +180,34 @@ h1 {
     right: 43rem;
     bottom: 15rem;
     background-image: linear-gradient(to top, #6bb3f7 0%, #67d5f7 51%, #66ecf5 100%);
+}
+
+@keyframes bg-animation {
+    0% {background-position: left;}
+    100% {background-position: right;}
+  }
+
+.clear {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    height: 5rem;
+    width: 11rem;
+    border-radius: 1rem;
+    background: linear-gradient(
+        45deg,
+        #0de0fc,
+        #5dbad6,
+        #6f91ff
+      );
+    box-shadow: inset 0 0 0 0 ;
+    transition: ease-out .3s;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.clear:hover {
+    box-shadow: inset 9rem 0 0 0 #fc0e0e;
+    color: whitesmoke;
 }

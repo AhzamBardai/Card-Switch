@@ -11,6 +11,8 @@ const restartBtn = document.querySelector('.restart')
 const startModal = document.querySelector('#start-modal')
 const endModal = document.querySelector('#win-modal')
 const board = document.querySelector('.score-board')
+const score = document.querySelector('.score')
+const clear = document.querySelector('.clear')
 
 const right = document.querySelector('.right')
 const wrong = document.querySelector('.wrong')
@@ -23,9 +25,14 @@ let first,
     match = false,
     lockFlip = false,
     rightCount = 0,
-    wrongCount = 0
-    
-  
+    wrongCount = 0,
+    newCards = [],
+    totalScore = null,
+    gameMode = 0
+
+let localStorage = window.localStorage;
+
+
 
 
 easyBtn.addEventListener('click', function(e){
@@ -38,6 +45,7 @@ easyBtn.addEventListener('click', function(e){
     document.body.style.background = 'no-repeat center/80% url("background-img.png")'
     document.body.style.backgroundPositionX = '12rem'
     document.body.style.backgroundPositionY = '-5rem'
+    gameMode = 1
     makeCardGrid(6)
     
 })
@@ -51,6 +59,7 @@ medBtn.addEventListener('click', function(e){
     document.body.style.background = 'no-repeat center/80% url("background-img.png")'
     document.body.style.backgroundPositionX = '12rem'
     document.body.style.backgroundPositionY = '-5rem'
+    gameMode = 2
     makeCardGrid(9)
     
 })
@@ -63,15 +72,25 @@ hardBtn.addEventListener('click', function(e){
     document.body.style.background = 'no-repeat center/80% url("background-img.png")'
     document.body.style.backgroundPositionX = '12rem'
     document.body.style.backgroundPositionY = '-5rem'
+    gameMode = 3
     makeCardGrid(12)
     
 })
 
 function makeCardGrid(num) {
+
+    if(localStorage.getItem('keepScore') !== null){
+        totalScore = parseInt(localStorage.getItem('keepScore'))
+        score.innerText = parseInt(localStorage.getItem('keepScore'))
+    }else {
+        score.innerText = 0
+    }
+
+    console.log(localStorage.getItem('keepScore'))
+
     randArr = Math.floor(Math.random() * cards.length)
     randIndex = Math.floor(Math.random() * (cards[randArr].length - num))
     stopIndex = randIndex + num
-    newCards = []
     if(num === 12){
         randArr = 0
     }
@@ -136,6 +155,9 @@ function flip() {
 }
 
 function cardMatch() {
+
+    
+
     if(first.dataset.cardnum === second.dataset.cardnum) {
         rightCount++
         right.innerText = rightCount
@@ -147,6 +169,7 @@ function cardMatch() {
         match = false
         first = null
         second = null
+        scoreCount(true)
         if(rightCount == newCards.length/2){
             finishGame()
         }
@@ -169,7 +192,7 @@ function cardMatch() {
             match = false
             first = null
         }, 1000)
-
+        scoreCount(false)
     }
 }
 
@@ -188,5 +211,27 @@ function finishGame() {
     restartBtn.addEventListener('click', function() {
         endModal.style.display = 'none'
         startModal.style.display = 'block'
+        location.reload()
     })
 }
+
+function scoreCount(bool) {
+    if(gameMode === 1 && bool){
+        totalScore += 5
+        localStorage.setItem('keepScore', totalScore.toString())
+        score.innerText = 5 + parseInt(score.innerText)
+    } else if (gameMode === 2 && bool){
+        totalScore += 10
+        localStorage.setItem('keepScore', totalScore.toString())
+        score.innerText = 10 + parseInt(score.innerText)
+    } else if (gameMode === 3 && bool){
+        totalScore += 20
+        localStorage.setItem('keepScore', totalScore.toString())
+        score.innerText = 20 + parseInt(score.innerText)
+    }
+}
+
+clear.addEventListener('click', () => {
+    score.innerText = 0
+    localStorage.clear()
+})
