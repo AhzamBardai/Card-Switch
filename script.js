@@ -216,19 +216,34 @@ function finishGame() {
 }
 
 function scoreCount(bool) {
-    if(gameMode === 1 && bool){
-        totalScore += 5
-        localStorage.setItem('keepScore', totalScore.toString())
-        score.innerText = 5 + parseInt(score.innerText)
-    } else if (gameMode === 2 && bool){
-        totalScore += 10
-        localStorage.setItem('keepScore', totalScore.toString())
-        score.innerText = 10 + parseInt(score.innerText)
+    if(gameMode === 1){
+        if(bool){
+            totalScore += 5
+            score.innerText = 5 + parseInt(score.innerText)    
+        } else if (!bool && parseInt(score.innerText) > 0){
+            totalScore -= 1
+            score.innerText =  parseInt(score.innerText) - 1
+        }
+    } else if (gameMode === 2){
+        if(bool){
+            totalScore += 10
+            score.innerText = 10 + parseInt(score.innerText)    
+        } else if (!bool && parseInt(score.innerText) > 0){
+            totalScore -= 2
+            score.innerText = parseInt(score.innerText) - 2
+        }
     } else if (gameMode === 3 && bool){
-        totalScore += 20
-        localStorage.setItem('keepScore', totalScore.toString())
-        score.innerText = 20 + parseInt(score.innerText)
+        if(bool){
+            totalScore += 20
+            score.innerText = 20 + parseInt(score.innerText)    
+        } else if (!bool && parseInt(score.innerText) > 0){
+            totalScore -= 5
+            score.innerText = parseInt(score.innerText) - 5
+        }
     }
+
+    localStorage.setItem('keepScore', totalScore.toString())
+
 }
 
 clear.addEventListener('click', () => {
