@@ -124,13 +124,16 @@ span, .score{
 }
 
 @keyframes mymove {
-    from {font-size: 0px;}
+    from {font-size: 1rem;}
     to {font-size: 50px;}
 }
 
-h3 {
+.difficulty {
     animation: mymove 1.5s;
     animation-delay: 1s;
+    font-size: 50px;
+}
+.play-again {
     font-size: 50px;
 }
 
@@ -145,6 +148,10 @@ h3 {
 	overflow: auto;
 	display: none;
     opacity: 1;
+}
+
+#win-modal {
+    background-image: url('backgrounds/confetti.gif');
 }
 
 

@@ -269,10 +269,8 @@ function scoreCount(bool) {
 function finishGame() {
     setTimeout(() => {
         endModal.style.display = 'block'
-    }, 2000);
-    setTimeout(() => {
-        document.querySelector('.play-again').innerHTML = 'Wanna play again?'
-    }, 1000)
+    }, 1500);
+    document.querySelector('.play-again').innerHTML = 'Wanna play again?'
     restartBtn.addEventListener('click', function() {
         endModal.style.display = 'none'
         startModal.style.display = 'block'
@@ -295,4 +293,6 @@ settingsBtn.addEventListener('click', () => {
 document.querySelector('.close').addEventListener('click', () => {
     document.querySelector('.side-modal').style.display = 'none'
 })
+
+
 
