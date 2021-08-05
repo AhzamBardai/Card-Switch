@@ -27,7 +27,7 @@ player gets to pick the difficulty of the game they choose to play. Corner butto
 ### Wireframes
 ![Mode-1](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame1.PNG)
 ![Mode-2](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame2.PNG)
-![Mode-3](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame2.PNG)
+![Mode-3](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame3.PNG)
 
 ## Unsolved Problems
 
