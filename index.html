@@ -18,10 +18,16 @@
         </div>
     </div>
 
-    <div class="settings">
-        <div class="modal" id="settings-modal">
-            <!-- add how to play the game -->
-            <button class="button change-background">Change Background</button>
+    <button class="open-settings"></button>
+    <div class="side-modal">
+        <div class="settings" id="settings-modal">
+            <button class="close" ><strong>&times;</strong></button>
+            <h1 class="directions-header">How To Play</h1>
+            <p class="directions"><strong>Welcome again to Card Switch!<br></strong>
+                <br>In this game you have to match each card by flipping 2 of the same cards! If you match them, then you earn points. If you get them wrong, you lose points. Simple right?
+                <br>⇛Easy gets 5 points for correct and -1 for incorrect
+                <br>⇛Medium gets 10 points for correct and -2 for incorrect
+                <br>⇛Hard gets 20 pints for correct and -5 for incorrect </p>
         </div>
     </div>
     
@@ -48,7 +54,8 @@
 
     <div class="win-screen">
         <div class="modal" id="win-modal">
-            <h1 class="winner" >Congratulations!</h1>
+            <h1 class="winner" >Congratulations, you won!</h1>
+            <h3 class="play-again"></h3>
             <button class="button restart">Restart Game</button>
         </div>
     </div>
