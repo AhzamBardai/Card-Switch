@@ -25,9 +25,9 @@ User gets to pick the difficulty of the game they choose to play. Corner button 
 [link to Card Switch](https://ahzambardai.github.io/Card-Switch/)
 
 ### Wireframes
-![alt Mode-1](.screenshots\frame1.PNG)
-![alt Mode-2](.screenshots\frame2.PNG)
-![alt Mode-3](.screenshots\frame3.PNG)
+![alt Mode-1](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame1.PNG)
+![alt Mode-2](screenshots\frame2.PNG)
+![alt Mode-3](screenshots\frame3.PNG)
 
 ## Unsolved Problems
 
