@@ -104,7 +104,7 @@ function makeCardGrid(num) {
         score.innerText = 0
     }
 
-
+    document.querySelector('#settings-image').style.display = 'inline'
     document.body.style.background = `no-repeat center/100% url(backgrounds/boxes.jpg)`
     startModal.style.display = 'none'
     board.style.display = 'grid'
@@ -230,9 +230,8 @@ function cardMatch() {
 
 window.onload = function () {
     startModal.style.display = 'block'
-    setTimeout(() => {
-        document.querySelector('.difficulty').innerHTML = 'Choose your <em>Difficulty</em>'
-    }, 1000)
+    document.querySelector('.difficulty').innerHTML = 'Choose your <em>Difficulty</em>'
+   
 }
 
 function scoreCount(bool) {

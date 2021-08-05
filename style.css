@@ -123,14 +123,7 @@ span, .score{
     font-size: 100px;
 }
 
-@keyframes mymove {
-    from {font-size: 1rem;}
-    to {font-size: 50px;}
-}
-
 .difficulty {
-    animation: mymove 1.5s;
-    animation-delay: 1s;
     font-size: 50px;
 }
 .play-again {
@@ -271,6 +264,7 @@ span, .score{
 }
 
 #settings-image {
+    display: none;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
