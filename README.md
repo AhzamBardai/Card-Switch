@@ -22,11 +22,16 @@ player gets to pick the difficulty of the game they choose to play. Corner butto
 ### Executing program
 
 * Click link Below to open through Github pages
-[link to Card Switch](https://ahzambardai.github.io/Card-Switch/)
+* [link to Card Switch](https://ahzambardai.github.io/Card-Switch/)
 
 ### Wireframes
+* Easy mode
 ![Mode-1](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame1.PNG)
+
+* Medium Mode 
 ![Mode-2](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame2.PNG)
+
+* Hard Mode
 ![Mode-3](https://github.com/AhzamBardai/Card-Switch/blob/master/screenshots/frame3.PNG)
 
 ## Unsolved Problems
