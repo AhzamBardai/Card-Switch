@@ -141,6 +141,7 @@ span, .score{
 	overflow: auto;
 	display: none;
     opacity: 1;
+    cursor: pointer;
 }
 
 #win-modal {
@@ -158,6 +159,7 @@ span, .score{
     bottom: 10rem;
     border-radius: 2rem;
     transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
 }
 .button:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -183,6 +185,7 @@ span, .score{
     right: 43rem;
     bottom: 10rem;
     background-image: linear-gradient(to top, #6bb3f7 0%, #67d5f7 51%, #66ecf5 100%);
+    cursor: pointer;
 }
 
 
@@ -205,6 +208,7 @@ span, .score{
     color: black;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;	
 }
 
 .clear:hover {
