@@ -1,6 +1,6 @@
 # Card-Switch
 
-Card Switch allows you to pick from 3 difficulties; Easy, Medium and Hard! Then you get and array of cards all flipped backwards and you have to choose 2 similar cards. This game tests a player's luck and mmemory.
+Card Switch allows you to pick from 3 difficulties; Easy, Medium and Hard! Then you get and array of cards all flipped backwards and you have to choose 2 similar cards. This game tests a player's luck and memory.
 
 ## User Stories
 
