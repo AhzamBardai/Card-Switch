@@ -1,6 +1,9 @@
 body{
     text-align: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
 }
 .cards {
     display: grid;
@@ -141,6 +144,7 @@ span, .score{
 	overflow: auto;
 	display: none;
     opacity: 1;
+    cursor: pointer;
 }
 
 #win-modal {
@@ -149,6 +153,7 @@ span, .score{
 
 
 .button {
+    cursor: pointer;
     display: inline-block;
     position: absolute;
     width: 10rem;
@@ -158,6 +163,7 @@ span, .score{
     bottom: 10rem;
     border-radius: 2rem;
     transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
 }
 .button:hover{
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -183,10 +189,12 @@ span, .score{
     right: 43rem;
     bottom: 10rem;
     background-image: linear-gradient(to top, #6bb3f7 0%, #67d5f7 51%, #66ecf5 100%);
+    cursor: pointer;
 }
 
 
 .clear {
+    cursor: pointer;
     display: none;
     position: absolute;
     top: 2rem;
@@ -205,6 +213,7 @@ span, .score{
     color: black;
     font-weight: bold;
     font-size: 20px;
+    cursor: pointer;	
 }
 
 .clear:hover {
@@ -213,6 +222,7 @@ span, .score{
 }
 
 .close {
+    cursor: pointer;
     text-align: end;
     border: none;
     background: none;
@@ -264,11 +274,12 @@ span, .score{
 }
 
 #settings-image {
+    cursor: pointer;
     display: none;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
-    box-shadow: inset 0 0 25px  rgb(255, 255, 255);
+    box-shadow: inset 0 0 30px  rgb(255, 255, 255);
     transition: transform .7s ease-in-out;
 }
 #settings-image:hover {
