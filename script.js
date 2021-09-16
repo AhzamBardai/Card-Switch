@@ -345,24 +345,20 @@ function scoreCount(bool) {
         }
     } 
     // score for hard mode
-    else if (gameMode === 3 && bool){
-
+    else if (gameMode === 3){
         // checks if the function call was from the right user picks or the wrong
         if(bool){
-
             // adds to total score and shows on screen inside score
             totalScore += 20
             score.innerText = 20 + parseInt(score.innerText)    
         } 
         
-        else if (!bool && parseInt(score.innerText) > 0){
-
+        else if (!bool && parseInt(score.innerText) > 5){
             // removes from total score and shows on screen inside score
             totalScore -= 5
             score.innerText = parseInt(score.innerText) - 5
         }
     }
-
     // inputs total score to local storage to save players current total score
     localStorage.setItem('keepScore', totalScore.toString())
 

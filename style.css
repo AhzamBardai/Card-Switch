@@ -1,6 +1,9 @@
 body{
     text-align: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
 }
 .cards {
     display: grid;
@@ -150,6 +153,7 @@ span, .score{
 
 
 .button {
+    cursor: pointer;
     display: inline-block;
     position: absolute;
     width: 10rem;
@@ -190,6 +194,7 @@ span, .score{
 
 
 .clear {
+    cursor: pointer;
     display: none;
     position: absolute;
     top: 2rem;
@@ -217,6 +222,7 @@ span, .score{
 }
 
 .close {
+    cursor: pointer;
     text-align: end;
     border: none;
     background: none;
@@ -268,6 +274,7 @@ span, .score{
 }
 
 #settings-image {
+    cursor: pointer;
     display: none;
     height: 5rem;
     width: 5rem;
